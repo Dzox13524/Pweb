@@ -20,6 +20,75 @@ body {
     linear-gradient(to bottom, #ffffff20 1px, transparent 1px);
 }
 
+.headers {
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  /* background-color: rgba(255, 255, 255, 0.05); */
+  backdrop-filter: blur(10px);
+}
+
+.headers .List-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.headers .List-menu .logo {
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  margin: 10px;
+}
+.headers .List-menu img {
+  width: 50px;
+  height: 8%;
+  justify-content: left;
+}
+
+.headers .List-menu .menu {
+  padding: 10px;
+  gap: 20px;
+  display: flex;
+}
+
+.headers .List-menu .menu .button {
+  padding: 0 40px 0 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #000000ff;
+  border: 1px solid #ffffff;
+  color: ffffff;
+}
+.headers .List-menu .menu .button:hover {
+  padding: 0 40px 0 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #000000ff;
+  background-image: linear-gradient(135deg, #ffffff40, transparent 30%),
+    linear-gradient(320deg, #ffffff40, transparent 20%);
+  border: 1px solid #ffffff;
+  color: ffffff;
+  box-shadow: 0 0 20px #a855f7;
+}
+.headers .List-menu .menu .button h3 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
 .navbar-container {
   position: fixed;
   bottom: 30px;
@@ -168,7 +237,7 @@ hero .caption p {
 
 .cardhero {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
   justify-content: center;
   gap: 40px;
@@ -203,8 +272,8 @@ hero .caption p {
 }
 
 .cardhero .image {
-  width: 10dvw;
-  height: 30dvh;
+  width: 20dvw;
+  height: 60dvh;
 }
 
 .cardhero .image img {
