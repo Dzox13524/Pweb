@@ -1,0 +1,49 @@
+      body {
+        background-color: #0d0d0d;
+        color: #f8f9fa;
+        background-image: radial-gradient(
+          circle at top right,
+          rgba(138, 43, 226, 0.3),
+          transparent 40%
+        );
+        background-attachment: fixed;
+      }
+      .card {
+        background-color: rgba(26, 26, 26, 0.8);
+        border: 1px solid #333;
+        backdrop-filter: blur(10px);
+      }
+      .table {
+        --bs-table-bg: transparent;
+        --bs-table-striped-bg: rgba(255, 255, 255, 0.05);
+        --bs-table-hover-bg: rgba(255, 255, 255, 0.1);
+        --bs-table-border-color: #333;
+      }
+      .dt-buttons .btn {
+        background-color: #8a2be2;
+        border-color: #8a2be2;
+        color: white;
+      }
+      .page-link {
+        background-color: transparent;
+        border-color: #333;
+        color: #f8f9fa;
+      }
+      .page-link:hover {
+        background-color: #8a2be2;
+        border-color: #8a2be2;
+      }
+      .page-item.active .page-link {
+        background-color: #8a2be2;
+        border-color: #8a2be2;
+      }
+      .modal-content {
+        background-color: #1a1a1a;
+        border-color: #444;
+      }
+      .modal-header {
+        border-bottom-color: #444;
+      }
+      dt {
+        color: #8a2be2;
+      } 
