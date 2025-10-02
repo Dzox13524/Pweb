@@ -224,11 +224,15 @@
           e.preventDefault();
 
           const signatureDataUrl = canvas.toDataURL("image/png");
-          const fileInput = $("#berkas")[0];
-          const fileName =
-            fileInput.files.length > 0
-              ? fileInput.files[0].name
-              : "Tidak diunggah";
+            const fileInput = $("#berkas")[0];
+            const fileName =
+              fileInput.files.length > 0
+                ? fileInput.files[0].name
+                : "Tidak diunggah";
+            const fileUrl = fileInput.files.length > 0
+                ? URL.createObjectURL(fileInput.files[0])
+                : "Tidak diunggah";
+
           const formData = {
             nama: $("#namaLengkap").val(),
             umur: $("#umur").val(),
@@ -236,6 +240,7 @@
             kota: $("#kota").val(),
             jenisKelamin: $('input[name="jenisKelamin"]:checked').val(),
             fileName: fileName,
+            fileUrl: fileUrl,
             signature: signatureDataUrl,
             timestamp: new Date().toISOString(),
           };

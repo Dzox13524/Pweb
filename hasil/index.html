@@ -67,14 +67,10 @@
 
 <script>
 $(document).ready(function() {
-    // 1. Ambil data lama dari Local Storage
     let dataRegistrasi = JSON.parse(localStorage.getItem('dataRegistrasi')) || [];
-
-    // 2. Ambil data baru dari URL (jika ada)
     const params = new URLSearchParams(window.location.search);
     const namaBaru = params.get('nama');
 
-    // Hanya tambahkan data baru jika parameter 'nama' ada di URL
     if (namaBaru) {
         const dataBaru = {
             nama: namaBaru,
@@ -83,17 +79,13 @@ $(document).ready(function() {
             kota: params.get('kota'),
             jenisKelamin: params.get('jenisKelamin')
         };
-        // Tambahkan data baru ke array
         dataRegistrasi.push(dataBaru);
         
-        // 3. Simpan kembali array yang sudah diupdate ke Local Storage
         localStorage.setItem('dataRegistrasi', JSON.stringify(dataRegistrasi));
 
-        // Hapus parameter dari URL agar data tidak terduplikasi saat refresh
         window.history.replaceState({}, document.title, window.location.pathname);
     }
     
-    // 4. Tampilkan semua data ke dalam tabel
     const dataContainer = $('#data-container');
     dataRegistrasi.forEach(data => {
         const row = `<tr>
@@ -106,7 +98,6 @@ $(document).ready(function() {
         dataContainer.append(row);
     });
 
-    // 5. Inisialisasi DataTables setelah tabel diisi
     new DataTable('#hasilTabel', {
         layout: {
             topStart: {
@@ -115,12 +106,11 @@ $(document).ready(function() {
         }
     });
 
-    // 6. Fungsi untuk tombol Reset Data
     $('#resetData').on('click', function() {
         if (confirm('Apakah Anda yakin ingin menghapus semua data?')) {
             localStorage.removeItem('dataRegistrasi');
             alert('Semua data telah dihapus.');
-            location.reload(); // Muat ulang halaman
+            location.reload();
         }
     });
 });
